@@ -1,14 +1,11 @@
 package intern;
 
-import java.io.InputStream;
-import java.io.PrintStream;
-
-import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.MatcherAssert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 
 import org.junit.jupiter.api.Test;
 
@@ -27,9 +24,6 @@ class JankenTest {
 		String stdIn = "a\n-1\n3\n1";
 		InputStream in = new ByteArrayInputStream(stdIn.getBytes());
 		System.setIn(in);
-		
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		System.setOut(new PrintStream(out));
 		
 		int result = Janken.getUser();
 	}
